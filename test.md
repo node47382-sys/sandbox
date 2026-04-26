@@ -1,6 +1,6 @@
 `Hi Dude`   
 
-v2rayNG ✔️  
+Github release links ✔️  
 
 YouTube ❌  
 
