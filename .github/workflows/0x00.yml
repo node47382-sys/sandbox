@@ -48,7 +48,7 @@ jobs:
 
       - name: Setup YouTube Cookies
         run: |
-          if[ -n "${{ secrets.YOUTUBE_COOKIES }}" ]; then
+          if [ -n "${{ secrets.YOUTUBE_COOKIES }}" ]; then
             echo '${{ secrets.YOUTUBE_COOKIES }}' > youtube_cookies.txt
           else
             touch youtube_cookies.txt
@@ -151,10 +151,11 @@ jobs:
             
             rm -f "dl/${BASENAME}.zip" "dl/${BASENAME}.z"*
             
-            if[ -n "$HAS_PASS" ] || [ "$SIZE" -gt "$LIMIT" ]; then
+            if [ -n "$HAS_PASS" ] || [ "$SIZE" -gt "$LIMIT" ]; then
               echo "Zipping/Splitting: $BASENAME"
               
-              PASS_ARG=""[ -n "$HAS_PASS" ] && PASS_ARG="-P $HAS_PASS"
+              PASS_ARG=""
+              [ -n "$HAS_PASS" ] && PASS_ARG="-P $HAS_PASS"
               
               zip $PASS_ARG -s 95m "dl/${BASENAME}.zip" -j "$FILE"
               
